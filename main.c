@@ -58,9 +58,9 @@ void fillboard(char board[9][9])
             if (i == 8 - 1 && j == 3 || i == 8 - 1 && j == 6)
                 board[i][j] = 'B';
             if (i == 8 - 1 && j == 4)
-                board[i][j] = 'q';
+                board[i][j] = 'Q';
             if (i == 8 - 1 && j == 5)
-                board[i][j] = 'k';
+                board[i][j] = 'K';
         }
 }
 void printboard(char board[9][9])
