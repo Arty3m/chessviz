@@ -30,7 +30,7 @@ void startboard(char board[][9], int n)
                 board[i][7] = 'g';
                 board[i][8] = 'h';
             }
-            // BOLSHIE
+            // BLACK
             if (i == 8 - 7)
                 board[i][j] = 'p';
             if (i == 8 - 8 && j == 1 || i == 8 - 8 && j == 8)
@@ -43,7 +43,7 @@ void startboard(char board[][9], int n)
                 board[i][j] = 'q';
             if (i == 8 - 8 && j == 5)
                 board[i][j] = 'k';
-            // MELKIE
+            // WHITE
             if (i == 8 - 2)
                 board[i][j] = 'P';
             if (i == 8 - 1 && j == 1 || i == 8 - 1 && j == 8)
@@ -70,8 +70,10 @@ void printboard(char board[9][9])
 }
 int main()
 {
-    int code, n = 9, i, j, k = 3, p1 = 0, p2 = 0, t = 0, t1 = 0, f = 0;
+    int n = 9;
     char hod[10], board[9][9], boardtemp[9][9];
+    startboard(board, n);
+    printboard(board, n);
 
     system("PAUSE");
     return 0;
