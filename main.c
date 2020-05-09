@@ -59,14 +59,15 @@ void startboard(char board[][9], int n)
         }
 }
 
-void printboard(char board[9][9])
+void printboard(char board[9][9], int n)
 {
     int i, j;
-    for (i = 0; i < 9; i++) {
-        for (j = 0; j < 9; j++)
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++)
             printf("%c ", board[i][j]);
         printf("\n");
     }
+    printf("\n");
 }
 int main()
 {
