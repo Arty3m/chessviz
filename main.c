@@ -1,18 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-void startboard(char board[9][9])
+void startboard(char board[][9], int n)
 {
     int i, j;
-    for (i = 0; i < 9; i++)
-        for (j = 0; j < 9; j++) {
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
             board[i][j] = '\0';
-        }
-}
-void fillboard(char board[9][9])
-{
-    int i, j;
-    for (i = 0; i < 9; i++)
-        for (j = 0; j < 9; j++) {
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++) {
             if (j == 0) {
                 board[0][j] = '8';
                 board[1][j] = '7';
@@ -38,11 +33,11 @@ void fillboard(char board[9][9])
             // BOLSHIE
             if (i == 8 - 7)
                 board[i][j] = 'p';
-            if ((i == 8 - 8 && j == 1) || (i == 8 - 8 && j == 8))
+            if (i == 8 - 8 && j == 1 || i == 8 - 8 && j == 8)
                 board[i][j] = 'r';
-            if ((i == 8 - 8 && j == 2) || (i == 8 - 8 && j == 7))
+            if (i == 8 - 8 && j == 2 || i == 8 - 8 && j == 7)
                 board[i][j] = 'n';
-            if ((i == 8 - 8 && j == 3) || (i == 8 - 8 && j == 6))
+            if (i == 8 - 8 && j == 3 || i == 8 - 8 && j == 6)
                 board[i][j] = 'b';
             if (i == 8 - 8 && j == 4)
                 board[i][j] = 'q';
@@ -51,11 +46,11 @@ void fillboard(char board[9][9])
             // MELKIE
             if (i == 8 - 2)
                 board[i][j] = 'P';
-            if ((i == 8 - 1 && j == 1) || (i == 8 - 1 && j == 8))
+            if (i == 8 - 1 && j == 1 || i == 8 - 1 && j == 8)
                 board[i][j] = 'R';
-            if ((i == 8 - 1 && j == 2) || (i == 8 - 1 && j == 7))
+            if (i == 8 - 1 && j == 2 || i == 8 - 1 && j == 7)
                 board[i][j] = 'N';
-            if ((i == 8 - 1 && j == 3) || (i == 8 - 1 && j == 6))
+            if (i == 8 - 1 && j == 3 || i == 8 - 1 && j == 6)
                 board[i][j] = 'B';
             if (i == 8 - 1 && j == 4)
                 board[i][j] = 'Q';
@@ -63,6 +58,7 @@ void fillboard(char board[9][9])
                 board[i][j] = 'K';
         }
 }
+
 void printboard(char board[9][9])
 {
     int i, j;
@@ -74,10 +70,8 @@ void printboard(char board[9][9])
 }
 int main()
 {
-    char board[9][9];
-    startboard(board);
-    fillboard(board);
-    printboard(board);
+    int code, n = 9, i, j, k = 3, p1 = 0, p2 = 0, t = 0, t1 = 0, f = 0;
+    char hod[10], board[9][9], boardtemp[9][9];
 
     system("PAUSE");
     return 0;
