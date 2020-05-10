@@ -95,6 +95,11 @@ int main()
                         t = i;
                 p1 = 8 - (hod[1] - 48);
 
+                if (board[p1][t] == 'P') {
+                    WhPesh(board, n, hod);
+                    printboard(board, n);
+                }
+
                 for (i = 0; i < 8; i++) {
                     for (j = 1; j < 9; j++) {
                         if (boardtemp[i][j] != board[i][j]) {
