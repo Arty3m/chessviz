@@ -106,7 +106,7 @@ char BlPesh(char board[][9], int n, char hod[10])
 
     for (i = 1; i < n; i++)
         if (hod[3] == board[8][i])
-            t = i;
+            t1 = i;
 
     p1 = 8 - (hod[1] - 48);
     p2 = 8 - (hod[4] - 48);
