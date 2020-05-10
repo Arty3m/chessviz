@@ -80,6 +80,9 @@ char WhPesh(char board[][9], int n, char hod[10])
         if (hod[3] == board[8][i])
             t1 = i;
 
+    p1 = 8 - (hod[1] - 48);
+    p2 = 8 - (hod[4] - 48);
+
     if (board[p2][t1] == '\0') {
         for (p1--; p1 >= p2; p1--)
             if (board[p1][t] != '\0')
