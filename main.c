@@ -132,6 +132,7 @@ int main()
     char hod[10], board[9][9], boardtemp[9][9];
     startboard(board, n);
     printboard(board, n);
+
     while (1) {
         if (k % 2 == 1) {
             printf("White turn. Enter hod: ");
@@ -227,6 +228,7 @@ int main()
                 printboard(board, n);
             }
         }
-    } // while end    system("PAUSE");
+    }
+    system("PAUSE");
     return 0;
 }
