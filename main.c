@@ -69,13 +69,40 @@ void printboard(char board[9][9], int n)
     }
     printf("\n");
 }
+char WhPesh(char board[][9], int n, char hod[10])
+{
+    int i, k = 0, t, t1, p1, p2;
+    for (i = 1; i < n; i++)
+        if (hod[0] == board[8][i])
+            t = i;
+
+    for (i = 1; i < n; i++)
+        if (hod[3] == board[8][i])
+            t1 = i;
+
+    if (board[p2][t1] == '\0') {
+        for (p1--; p1 >= p2; p1--)
+            if (board[p1][t] != '\0')
+                k++;
+        if ((hod[4] - hod[1] > 2) || (board[board[0][0] - hod[1]][t] != 'P')
+            || (hod[0] != hod[3]) || (k != 0))
+            printf("Incorrect hod \n");
+        else {
+            board[board[0][0] - hod[1]][t] = '\0';
+            board[board[0][0] - hod[1] - (hod[4] - hod[1])][t] = 'P';
+        }
+    }
+    return 0;
+}
 int main()
 {
     int n = 9;
     char hod[10], board[9][9], boardtemp[9][9];
     startboard(board, n);
     printboard(board, n);
-
+    scanf("%s", hod);
+    WhPesh(board, n, hod);
+    printboard(board, n);
     system("PAUSE");
     return 0;
 }
