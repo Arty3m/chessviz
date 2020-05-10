@@ -157,11 +157,15 @@ int main()
             if (hod[0] == 'a' || hod[0] == 'b' || hod[0] == 'c' || hod[0] == 'd'
                 || hod[0] == 'e' || hod[0] == 'f' || hod[0] == 'g'
                 || hod[0] == 'h') {
+                if (hod[5] != '\0')
+                    continue;
+                f = 0;
                 for (i = 0; i < 8; i++) {
                     for (j = 1; j < 9; j++) {
                         boardtemp[i][j] = board[i][j];
                     }
                 }
+
                 for (i = 1; i < n; i++)
                     if (hod[0] == board[8][i])
                         t = i;
