@@ -71,6 +71,13 @@ CTEST(BlackPawn, IncorrectMove2)
     int result = BlPesh(board, n, hod);
     ASSERT_EQUAL(1, result);
 }
+CTEST(Queue, HaveNoDiff)
+{
+    startboard(board, n);
+    startboard(boardtemp, n);
+    int result = Queue(3, board, boardtemp, hod, n);
+    ASSERT_EQUAL(3, result);
+}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
