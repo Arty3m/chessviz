@@ -78,6 +78,24 @@ CTEST(Queue, HaveNoDiff)
     int result = Queue(3, board, boardtemp, hod, n);
     ASSERT_EQUAL(3, result);
 }
+CTEST(Queue, HaveDiff)
+{
+    startboard(board, n);
+    for (int i = 0; i < 8; i++) {
+        for (int j = 1; j < 9; j++) {
+            boardtemp[i][j] = board[i][j];
+        }
+    }
+    hod[0] = 'e';
+    hod[1] = '7';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '4';
+    board[6][2] = ' ';
+    board[5][2] = 'P';
+    int result = Queue(3, board, boardtemp, hod, n);
+    ASSERT_EQUAL(4, result);
+}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
