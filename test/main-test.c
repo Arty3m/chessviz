@@ -60,17 +60,6 @@ CTEST(BlackPawn, IncorrectMove1)
     int result = BlPesh(board, n, hod);
     ASSERT_EQUAL(1, result);
 }
-CTEST(BlackPawn, IncorrectMove2)
-{
-    startboard(board, n);
-    hod[0] = 'e';
-    hod[1] = '7';
-    hod[2] = '-';
-    hod[3] = 'e';
-    hod[4] = '4';
-    int result = WhPesh(board, n, hod);
-    ASSERT_EQUAL(1, result);
-}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
