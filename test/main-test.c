@@ -38,6 +38,39 @@ CTEST(WhitePawn, IncorrectMove2)
     int result = WhPesh(board, n, hod);
     ASSERT_EQUAL(1, result);
 }
+CTEST(BlackPawn, CorrectMove1)
+{
+    startboard(board, n);
+    hod[0] = 'e';
+    hod[1] = '7';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '6';
+    int result = BlPesh(board, n, hod);
+    ASSERT_EQUAL(2, result);
+}
+CTEST(BlackPawn, IncorrectMove1)
+{
+    startboard(board, n);
+    hod[0] = 'e';
+    hod[1] = '7';
+    hod[2] = '-';
+    hod[3] = 'd';
+    hod[4] = '6';
+    int result = BlPesh(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
+CTEST(BlackPawn, IncorrectMove2)
+{
+    startboard(board, n);
+    hod[0] = 'e';
+    hod[1] = '7';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '4';
+    int result = BlPesh(board, n, hod);
+    ASSERT_EQUAL(0, result);
+}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
