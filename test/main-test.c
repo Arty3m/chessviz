@@ -120,6 +120,23 @@ CTEST(startboard, AccuracyofFilling)
         result = 0;
     ASSERT_EQUAL(0, result);
 }
+CTEST(WhiteK, CorrectMove)
+{
+    startboard(board, n);
+    hod[0] = 'e';
+    hod[1] = '2';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '4';
+    WhPesh(board, n, hod);
+    hod[0] = 'e';
+    hod[1] = '1';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '2';
+    int result = WhiteK(board, n, hod);
+    ASSERT_EQUAL(2, result);
+}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
