@@ -137,6 +137,23 @@ CTEST(WhiteK, CorrectMove)
     int result = WhiteK(board, n, hod);
     ASSERT_EQUAL(2, result);
 }
+CTEST(WhitePawn, IncorrectMove)
+{
+    startboard(board, n);
+    hod[0] = 'e';
+    hod[1] = '2';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '4';
+    WhPesh(board, n, hod);
+    hod[0] = 'e';
+    hod[1] = '1';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '3';
+    int result = WhiteK(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
