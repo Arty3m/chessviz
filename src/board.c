@@ -151,7 +151,8 @@ char WhiteK(char board[][9], int n, char hod[10])
         } else {
             return 1;
         }
-    }
+    } else
+        return 1;
     return 0;
 }
 char BlackK(char board[][9], int n, char hod[10])
@@ -181,7 +182,8 @@ char BlackK(char board[][9], int n, char hod[10])
             return 2;
         } else
             return 1;
-    }
+    } else
+        return 1;
     return 0;
 }
 int Queue(int k, char board[9][9], char boardtemp[9][9], char hod[10], int n)
