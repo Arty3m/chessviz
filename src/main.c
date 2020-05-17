@@ -33,6 +33,10 @@ int main()
                     WhPesh(board, n, hod);
                     printboard(board, n);
                 }
+                if (board[p1][t] == 'K') {
+                    WhiteK(board, n, hod);
+                    printboard(board, n);
+                }
 
                 k = Queue(k, board, boardtemp, hod, n);
 
@@ -64,6 +68,10 @@ int main()
 
                 if (board[p1][t] == 'p') {
                     BlPesh(board, n, hod);
+                    printboard(board, n);
+                }
+                if (board[p1][t] == 'k') {
+                    BlackK(board, n, hod);
                     printboard(board, n);
                 }
 

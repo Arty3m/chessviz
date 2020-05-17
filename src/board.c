@@ -151,7 +151,39 @@ char WhiteK(char board[][9], int n, char hod[10])
         } else {
             return 1;
         }
-    }
+    } else
+        return 1;
+    return 0;
+}
+char BlackK(char board[][9], int n, char hod[10])
+{
+    int i, p1, p2, t, t1, f1 = 0, f2 = 0, f3 = 0, f4 = 0;
+    for (i = 1; i < n; i++)
+        if (hod[0] == board[8][i])
+            t = i;
+    for (i = 1; i < n; i++)
+        if (hod[3] == board[8][i])
+            t1 = i;
+    p1 = 8 - (hod[1] - 48);
+    p2 = 8 - (hod[4] - 48);
+
+    if (board[p2][t1] == '\0') {
+        f1 = p1 + 1;
+        f2 = p1 - 1;
+        f3 = t - 1;
+        f4 = t + 1;
+
+        if ((f1 == p2 && f3 == t1) || (f1 == p2 && f4 == t1)
+            || (f2 == p2 && f3 == t1) || (f2 == p2 && f4 == t1)
+            || (f1 == p2 && t == t1) || (f2 == p2 && t == t1)
+            || (p1 == p2 && f3 == t1) || (p1 == p2 && f4 == t1)) {
+            board[p1][t] = '\0';
+            board[p2][t1] = 'k';
+            return 2;
+        } else
+            return 1;
+    } else
+        return 1;
     return 0;
 }
 int Queue(int k, char board[9][9], char boardtemp[9][9], char hod[10], int n)

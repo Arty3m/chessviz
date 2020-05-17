@@ -137,7 +137,7 @@ CTEST(WhiteK, CorrectMove)
     int result = WhiteK(board, n, hod);
     ASSERT_EQUAL(2, result);
 }
-CTEST(WhitePawn, IncorrectMove)
+CTEST(WhiteK, IncorrectMove)
 {
     startboard(board, n);
     hod[0] = 'e';
@@ -152,6 +152,54 @@ CTEST(WhitePawn, IncorrectMove)
     hod[3] = 'e';
     hod[4] = '3';
     int result = WhiteK(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
+CTEST(WhiteK, IncorrectMove1)
+{
+    startboard(board, n);
+    board[6][5] = '\0';
+    hod[0] = 'e';
+    hod[1] = '1';
+    hod[2] = '-';
+    hod[3] = 'd';
+    hod[4] = '2';
+    int result = BlackK(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
+CTEST(BlackK, CorrectMove)
+{
+    startboard(board, n);
+    board[1][5] = '\0';
+    hod[0] = 'e';
+    hod[1] = '8';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '7';
+    int result = BlackK(board, n, hod);
+    ASSERT_EQUAL(2, result);
+}
+CTEST(BlackK, IncorrectMove)
+{
+    startboard(board, n);
+    board[1][5] = '\0';
+    hod[0] = 'e';
+    hod[1] = '8';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '6';
+    int result = BlackK(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
+CTEST(BlackK, IncorrectMove1)
+{
+    startboard(board, n);
+    board[1][5] = '\0';
+    hod[0] = 'e';
+    hod[1] = '8';
+    hod[2] = '-';
+    hod[3] = 'd';
+    hod[4] = '7';
+    int result = BlackK(board, n, hod);
     ASSERT_EQUAL(1, result);
 }
 int main(int argc, const char** argv)
