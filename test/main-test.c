@@ -178,6 +178,30 @@ CTEST(BlackK, CorrectMove)
     int result = BlackK(board, n, hod);
     ASSERT_EQUAL(2, result);
 }
+CTEST(BlackK, IncorrectMove)
+{
+    startboard(board, n);
+    board[1][5] = '\0';
+    hod[0] = 'e';
+    hod[1] = '8';
+    hod[2] = '-';
+    hod[3] = 'e';
+    hod[4] = '6';
+    int result = BlackK(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
+CTEST(BlackK, IncorrectMove1)
+{
+    startboard(board, n);
+    board[1][5] = '\0';
+    hod[0] = 'e';
+    hod[1] = '8';
+    hod[2] = '-';
+    hod[3] = 'd';
+    hod[4] = '7';
+    int result = BlackK(board, n, hod);
+    ASSERT_EQUAL(1, result);
+}
 int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
